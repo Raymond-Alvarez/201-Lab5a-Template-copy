@@ -16,15 +16,9 @@ function sum(a, b) { //eslint-disable-line
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+// Once you get the te 9 is 45."
 
-/////////////////////////////////////
-/* Problem 2
-Write a function called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
-
-"The product of 5 and 9 is 45."
-
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
+// Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
@@ -34,6 +28,14 @@ function multiply(a, b) { //eslint-disable-line
 
 // Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
+
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+
+/////////////////////////////////////
+/* Problem 2
+Write a function called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
+
+"The product of 5 and
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -50,11 +52,22 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+    // 1. Calculate the Sum using the sum() function
+    // sum(a, b)[0] gets just the number from the returned array
+    let sumAB = sum(a, b)[0]; 
+    let totalSum = sum(sumAB, c)[0];
+    // 2. Calculate the Product using the multiply() function
+    let productAB = multiply(a, b)[0];
+    let totalProduct = multiply(productAB, c)[0];
+    // 3. Create the strings exactly as requested
+    let sumString = `${a} and ${b} and ${c} sum to ${totalSum}.`;
+    let productString = `The product of ${a} and ${b} and ${c} is ${totalProduct}.`;
+    // 4. Return all four elements in an array
+    return [totalSum, totalProduct, sumString, productString];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
