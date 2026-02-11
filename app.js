@@ -154,10 +154,8 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
     return [totalProduct, productString];
 }
 
-// Uncomment to test
-testMultiplyAnyArray(testDynamicArray);
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
