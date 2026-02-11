@@ -135,12 +135,27 @@ This function should be dynamic, accepting an array of any length.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
-// Write your code here
-let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
-
+let testDynamicArray = [1,2,3,4,5]; // This defines it
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    let totalProduct = 1;
 
+    // 1. Loop through the array to calculate the product
+    for (let i = 0; i < dynamicArray.length; i++) {
+        // Use your multiply function's [0] index to get the numeric result
+        totalProduct = multiply(totalProduct, dynamicArray[i])[0];
+    }
+
+    // 2. Build the string. 
+    // .toString() on an array creates "1,2,3,4,5" automatically!
+    let arrayString = dynamicArray.toString();
+    let productString = `The numbers ${arrayString} have a product of ${totalProduct}.`;
+
+    // 3. Return the results
+    return [totalProduct, productString];
 }
+
+// Uncomment to test
+testMultiplyAnyArray(testDynamicArray);
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
